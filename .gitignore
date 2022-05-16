@@ -1,1 +1,7 @@
 *.pem
+step*
+wif_step*
+*.priv
+*.pub
+priv.1
+*.swp
