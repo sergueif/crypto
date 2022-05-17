@@ -4,9 +4,9 @@
 
 echo "302e0201010420$1a00706052b8104000a" | xxd -r -p > priv.1
 
-openssl ec -inform d -in priv.1 -outform DER|tail -c +8|head -c 32|xxd -p -c 32 > bitcoin.priv
+openssl ec -inform d -in priv.1 -outform DER|tail -c +8|head -c 32 | xxd -p -c 32 > bitcoin.priv #same as priv.1
 
-openssl ec -inform d -in priv.1 -pubout -outform DER|tail -c 65|xxd -p -c 65 > bitcoin.pub
+openssl ec -inform d -in priv.1 -pubout -outform DER|tail -c 65 | xxd -p -c 65 > bitcoin.pub
 
 xxd -r -p bitcoin.pub | sha256sum -b | cut -d\  -f1 > step2
 
